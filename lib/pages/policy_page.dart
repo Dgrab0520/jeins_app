@@ -161,7 +161,7 @@ class _PolicyPageState extends State<PolicyPage> {
                         width:170,
                         height:50,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(15),
                           color: Color(0xFF515059),
                         ),
                         child: GestureDetector(
@@ -189,7 +189,7 @@ class _PolicyPageState extends State<PolicyPage> {
                         width:170,
                         height:50,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(15),
                           gradient: LinearGradient(
                             colors: <Color>[Color(0xFF41A5FC), Color(0xFFDB74FF)],
                           ),
