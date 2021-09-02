@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jeins_app/pages/no1_create.dart';
 import 'main_page.dart';
 import 'no1_list.dart';
 import 'no1_list_sub1.dart';
@@ -330,7 +331,7 @@ class _No1_ListPageState extends State<No1_ListPage> {
                     child: GestureDetector(
                       onTap: (){
                         setState(() {
-                          number1 = No1_Page();
+                          number1 = No1_Create();
                         });
                         print('success');
                         Navigator.push(

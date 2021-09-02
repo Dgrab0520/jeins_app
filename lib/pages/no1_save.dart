@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'circus_page.dart';
 import 'main_page.dart';
 import 'no1_list.dart';
 import 'no1_page.dart';
@@ -234,7 +235,7 @@ class _No1_SaveState extends State<No1_Save> {
                     child: GestureDetector(
                       onTap: (){
                         setState(() {
-                          number1 = No1_Page();
+                          number1 = Circus_Page();
                         });
                         print('success');
                         Navigator.push(
