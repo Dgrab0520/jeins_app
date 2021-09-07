@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jeins_app/pages/mic_page.dart';
-import 'package:jeins_app/pages/no1_sos_long.dart';
 
 import 'circus_page.dart';
 import 'main_page.dart';
 
-class Sos_Page extends StatefulWidget {
+class Mic_Page extends StatefulWidget {
 
   @override
-  _Sos_PageState createState() => _Sos_PageState();
+  _Mic_PageState createState() => _Mic_PageState();
 }
 
-class _Sos_PageState extends State<Sos_Page> {
+class _Mic_PageState extends State<Mic_Page> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -202,55 +200,13 @@ class _Sos_PageState extends State<Sos_Page> {
                               SizedBox(width:10),
                               GestureDetector(
                                 onTap: (){
-                                  Get.dialog(AlertDialog(
-                                      shape: RoundedRectangleBorder(
-                                        side: BorderSide(
-                                            color: Colors.white, width: 2),
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(32.0),
-                                        ),
-                                      ),
-                                      backgroundColor: Color(0xFF423D3F).withOpacity(0.8),
-                                      content: Container(
-
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-
-                                            Row(
-                                              children: [
-                                                SizedBox(width:90),
-                                                Text(
-                                                  'Just Talk!',
-                                                  style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize:18,
-                                                  ),
-                                                ),
-                                                SizedBox(height:10),
-                                                SizedBox(width:30),
-                                                TextButton(
-                                                  style: TextButton.styleFrom(
-                                                      primary: Colors.white),
-                                                  child: Icon(Icons.close),
-                                                  onPressed: () =>
-                                                      Get.back(result: false),
-                                                ),
-                                              ],
-                                            ),
-                                            SizedBox(height:10),
-                                            Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                SizedBox(height:30),
-                                                Image.asset("assets/mic.png"),
-                                                SizedBox(height:30),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      )));
+                                  Get.defaultDialog(
+                                    title: "Just Talk",
+                                    content:Image.asset("assets/mic.png"),
+                                    backgroundColor: Colors.white.withOpacity(0.3),
+                                    titleStyle: TextStyle(color: Colors.white),
+                                    middleTextStyle: TextStyle(color: Colors.white),
+                                  );
                                 },
                                 child: Image.asset("assets/mic.png"),
                               ),
@@ -275,32 +231,20 @@ class _Sos_PageState extends State<Sos_Page> {
                                     ),
                                   ),
                                   SizedBox(width:10),
-                                  GestureDetector(
-                                    onTap: (){
-                                      setState(() {
-                                        number1 = No1_Long();
-                                      });
-                                      print('success');
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => MainPage()),
-                                      );
-                                    },
-                                    child: Container(
-                                      width:60,
-                                      height:35,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(8),
-                                        color:Color(0xFFA87B8B),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          '전송',
-                                          style: TextStyle(
-                                            color:Colors.white,
-                                            fontWeight:FontWeight.w500,
-                                            fontSize:15,
-                                          ),
+                                  Container(
+                                    width:60,
+                                    height:35,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      color:Color(0xFFA87B8B),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        '전송',
+                                        style: TextStyle(
+                                          color:Colors.white,
+                                          fontWeight:FontWeight.w500,
+                                          fontSize:15,
                                         ),
                                       ),
                                     ),
@@ -322,8 +266,8 @@ class _Sos_PageState extends State<Sos_Page> {
                               width:50,
                               height:50,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color:Colors.white.withOpacity(0.3)
+                                  borderRadius: BorderRadius.circular(15),
+                                  color:Colors.white.withOpacity(0.3)
                               ),
                               child: GestureDetector(
                                 onTap: (){
@@ -378,7 +322,7 @@ class _Sos_PageState extends State<Sos_Page> {
                                     '코인 충전하기',
                                     style: TextStyle(
                                       color:Colors.white,
-                                      fontWeight:FontWeight.w500, 
+                                      fontWeight:FontWeight.w500,
                                       fontSize:15,
                                     ),
                                   ),

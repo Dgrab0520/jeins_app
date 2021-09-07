@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:jeins_app/pages/people_list.dart';
 import 'package:jeins_app/pages/people_list2.dart';
 import 'package:jeins_app/pages/sos_page.dart';
@@ -160,18 +162,149 @@ class _Circus_PageState extends State<Circus_Page> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color:Color(0xFF7A6B92),
-                            ), 
+                            ),
                             child: GestureDetector(
                               onTap: (){
-                                setState(() {
-                                  number1 = Sos_Page();
-                                });
-                                print('success');
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => MainPage()),
+                                Get.dialog(AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      side: BorderSide(
+                                          color: Colors.white, width: 2),
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(32.0),
+                                      ),
+                                    ),
+                                    backgroundColor: Color(0xFF423D3F).withOpacity(0.8),
+                                    content: Container(
 
-                                );
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+
+                                          Row(
+                                            children: [
+                                              SizedBox(width:110),
+                                              Text(
+                                                'SOS',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize:18,
+                                                ),
+                                              ),
+                                              SizedBox(height:10),
+                                              SizedBox(width:55),
+                                              TextButton(
+                                                style: TextButton.styleFrom(
+                                                    primary: Colors.white),
+                                                child: Icon(Icons.close),
+                                                onPressed: () =>
+                                                    Get.back(result: false),
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(height:10),
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Text('· 랜덤친구들에게 도움을 요청할 수 있습니다.',
+                                                style: TextStyle(
+                                                  color:Colors.white,
+                                                  fontSize:14,
+                                                ),
+                                              ),
+                                              SizedBox(height:5),
+                                              Text('· 해당 NO.1에대해 도움을 요청하시겠습니까?',
+                                                style: TextStyle(
+                                                  color:Colors.white,
+                                                  fontSize:14,
+                                                ),
+                                              ),
+                                              SizedBox(height:5),
+                                              Text('· 현재 40명에게 SOS 요청 1발',
+                                                style: TextStyle(
+                                                  color:Colors.white,
+                                                  fontSize:14,
+                                                ),
+                                              ),
+                                              SizedBox(height:30),
+                                              Row(
+                                                children: [
+                                                  Expanded(
+                                                    child: Container(
+                                                      width:30,
+                                                      height:50,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(15),
+                                                        color:Color(0xFF615C61),
+                                                      ),
+                                                      child: GestureDetector(
+                                                        onTap: (){
+                                                          setState(() {
+                                                            number1 = Circus_Page();
+                                                          });
+                                                          print('success');
+                                                          Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(builder: (context) => MainPage()),
+                                                          );
+                                                        },
+                                                        child: Center(
+                                                          child: Text(
+                                                            '충전하기',
+                                                            style: TextStyle(
+                                                              color:Colors.white,
+                                                              fontWeight:FontWeight.w500,
+                                                              fontSize:15,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+
+                                                  SizedBox(width:20),
+
+                                                  Expanded(
+                                                    child: Container(
+                                                      width:30,
+                                                      height:50,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(15),
+                                                        gradient: LinearGradient(
+                                                          colors: <Color>[Color(0xFF41A5FC), Color(0xFFDB74FF)],
+                                                        ),
+                                                      ),
+                                                      child: GestureDetector(
+                                                        onTap: (){
+                                                          setState(() {
+                                                            number1 = Sos_Page();
+                                                          });
+                                                          print('success');
+                                                          Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(builder: (context) => MainPage()),
+                                                          );
+                                                        },
+                                                        child: Center(
+                                                          child: Text(
+                                                            '요청하기',
+                                                            style: TextStyle(
+                                                              color:Colors.white,
+                                                              fontWeight:FontWeight.w500,
+                                                              fontSize:15,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    )));
                               },
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
