@@ -340,7 +340,7 @@ class _Sos_PageState extends State<Sos_Page> {
 
                                 child: Center(
                                   child: Text(
-                                    '코인 충전하기',
+                                    '아마존에서 구입하기',
                                     style: TextStyle(
                                       color:Colors.white,
                                       fontWeight:FontWeight.w500,
