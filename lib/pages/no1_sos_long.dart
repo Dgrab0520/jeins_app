@@ -18,14 +18,13 @@ class _No1_LongState extends State<No1_Long> {
   var rng = new Random();
   @override
   Widget build(BuildContext context) {
+    sosList=[];
     for(int i = 0; i<10; i++){
       sosList.add(
           Positioned(
-            top: 0,
-            left: 0,
+            top: rng.nextDouble()*MediaQuery.of(context).size.height/3,
+            left: rng.nextDouble()*MediaQuery.of(context).size.width/3,
             child: Container(
-            height: 100,
-              width: 100,
               child: Image.asset("assets/icon.png"),
             ),
           )
@@ -826,6 +825,7 @@ class _No1_LongState extends State<No1_Long> {
                       ),
                     ),
                     SizedBox(height:30),
+                    
                     Container(
                       height:620,
                       padding: EdgeInsets.only(left:17,right:17,top:5),
@@ -887,51 +887,58 @@ class _No1_LongState extends State<No1_Long> {
                           ),
                           SizedBox(height:10),
 
-                          Container(
-                            child: Column(
-                              children: [
-                                Container(
-                                  width:314,
-                                  height:55,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    color:Color(0xFF382E56),
-                                    border: Border.all(
-                                      width: 1,
-                                      color: Colors.white,
+                          Expanded(
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  Container(
+                                    width:314,
+                                    height:55,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      color:Color(0xFF382E56),
+                                      border: Border.all(
+                                        width: 1,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Icon(Icons.play_arrow_rounded,color: Colors.white,size: 30, ),
+                                      ],
                                     ),
                                   ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(Icons.play_arrow_rounded,color: Colors.white,size: 30, ),
-                                    ],
-                                  ),
-                                ),
 
-                                SizedBox(height:10),
+                                  SizedBox(height:10),
 
-                                Container(
-                                  width:314,
-                                  height:55,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    color:Color(0xFF5C5C5C),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text('나 배고파 밥 좀 사줘',
-                                        style:TextStyle(
-                                          color:Colors.white,
+                                  Container(
+                                    width:314,
+                                    height:55,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      color:Color(0xFF5C5C5C),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text('나 배고파 밥 좀 사줘',
+                                          style:TextStyle(
+                                            color:Colors.white,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
 
+                                  Expanded(child: Container(
+                                    child: Stack(
+                                      children: sosList,
+                                    ),
+                                  )),
 
-                              ],
+                                ],
+                              ),
                             ),
                           ),
 
