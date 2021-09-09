@@ -285,7 +285,7 @@ class _No1_CompleteState extends State<No1_Complete> {
 
                     Container(
                       padding: EdgeInsets.only(left:17,right:17,top:10,bottom:10),
-                      width:360,
+                      width:double.infinity,
                       height:400,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
@@ -303,7 +303,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                   children: [
                       Container(
                         padding: EdgeInsets.only(left:17,right:17,top:10,bottom:10),
-                        width:360,
+                        width:double.infinity,
                         height:350,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),

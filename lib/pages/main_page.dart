@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:jeins_app/pages/more_page.dart';
 import 'package:jeins_app/pages/no1_save.dart';
 
 import 'home.dart';
 import 'no1_list.dart';
 import 'no1_page.dart';
 Widget number1 = No1_Page();
+Widget number2 = More_Page();
+
 int _selectedIndex = 0;
 class  MainPage extends StatefulWidget {
 
@@ -19,7 +22,7 @@ class _MainPageState extends State<MainPage> {
     No1_Save(),
     number1,
     No1_ListPage(),
-    Home(),
+     number2,
   ];
 
 

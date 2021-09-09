@@ -190,7 +190,7 @@ class _No1_CreateState extends State<No1_Create> {
 
                                 child: Center(
                                   child: Text(
-                                    '일반',
+                                    '싫어요로 1등하기',
                                     style: TextStyle(
                                       color:Colors.white,
                                       fontWeight:FontWeight.w500,
@@ -223,7 +223,7 @@ class _No1_CreateState extends State<No1_Create> {
                                 },
                                 child: Center(
                                   child: Text(
-                                    '성인',
+                                    '좋아요로 1등하기',
                                     style: TextStyle(
                                       color:Colors.white,
                                       fontWeight:FontWeight.w500,
