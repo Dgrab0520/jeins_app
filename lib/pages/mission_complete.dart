@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jeins_app/pages/complete_text.dart';
 
 import 'before_sub.dart';
-import 'circus_page.dart';
+import 'complete_text.dart';
 import 'main_page.dart';
-import 'no1_befor.dart';
 import 'no1_history.dart';
 
-class No1_Complete extends StatefulWidget {
-  const No1_Complete({Key? key}) : super(key: key);
+class Mission_Complete extends StatefulWidget {
+  const Mission_Complete({Key? key}) : super(key: key);
 
   @override
-  _No1_CompleteState createState() => _No1_CompleteState();
+  _Mission_CompleteState createState() => _Mission_CompleteState();
 }
 
-class _No1_CompleteState extends State<No1_Complete> {
+class _Mission_CompleteState extends State<Mission_Complete> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +21,7 @@ class _No1_CompleteState extends State<No1_Complete> {
       decoration: BoxDecoration(
         color: Colors.black,
         image: DecorationImage(
-            image: AssetImage("assets/no1_bg.jpg"),
+            image: AssetImage("assets/m_bg.png"),
             fit: BoxFit.cover,
             colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.5),BlendMode.dstATop)
         ),
@@ -55,7 +53,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                       Expanded(
                         flex:8,
 
-                        child: Text('Another No.1',
+                        child: Text('미션',
                           style: TextStyle(
                             color:Colors.white,
                             fontSize:30,
@@ -155,7 +153,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                                     GestureDetector(
                                       onTap: (){
                                         setState(() {
-                                          number1 = History_Page();
+                                          number4 = Mission_Complete();
                                         });
                                         print('success');
                                         Navigator.push(
@@ -284,8 +282,8 @@ class _No1_CompleteState extends State<No1_Complete> {
                   children: [
 
                     Container(
-                      margin: EdgeInsets.only(left:17,right:17,),
                       padding: EdgeInsets.only(left:17,right:17,top:10,bottom:10),
+                      margin: EdgeInsets.only(left:17,right:17,),
                       width:double.infinity,
                       height:400,
                       decoration: BoxDecoration(
@@ -302,27 +300,27 @@ class _No1_CompleteState extends State<No1_Complete> {
 
                 Column(
                   children: [
-                      Container(
-                        margin: EdgeInsets.only(left:17,right:17,),
-                        padding: EdgeInsets.only(left:17,right:17,top:10,bottom:10),
-                        width:double.infinity,
-                        height:350,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color:Colors.white.withOpacity(0.1),
-                        ),
-
-                        child: Column(
-                          children: [
-                            SizedBox(height:10),
-                            Before_Sub(),
-                            SizedBox(height:20),
-                            Before_Sub(),
-                            SizedBox(height:20),
-                            Before_Sub(),
-                          ],
-                        ),
+                    Container(
+                      padding: EdgeInsets.only(left:17,right:17,top:10,bottom:10),
+                      margin: EdgeInsets.only(left:17,right:17,),
+                      width:double.infinity,
+                      height:350,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color:Colors.white.withOpacity(0.1),
                       ),
+
+                      child: Column(
+                        children: [
+                          SizedBox(height:10),
+                          Before_Sub(),
+                          SizedBox(height:20),
+                          Before_Sub(),
+                          SizedBox(height:20),
+                          Before_Sub(),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(height:20),
@@ -515,7 +513,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                                                 child: GestureDetector(
                                                   onTap: (){
                                                     setState(() {
-                                                      number1 = No1_Before();
+                                                      number4 = Mission_Complete();
                                                     });
                                                     print('success');
                                                     Navigator.push(
@@ -550,7 +548,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                                                 child: GestureDetector(
                                                   onTap: (){
                                                     setState(() {
-                                                      number1 = No1_Before();
+                                                      number4 = Mission_Complete();
                                                     });
                                                     print('success');
                                                     Navigator.push(
@@ -604,7 +602,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                             child: GestureDetector(
                               onTap: (){
                                 setState(() {
-                                  number1 = No1_Complete();
+                                  number4 = Mission_Complete();
                                 });
                                 print('success');
                                 Navigator.push(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jeins_app/pages/healing_page.dart';
+import 'package:jeins_app/pages/more_message.dart';
+import 'package:jeins_app/pages/more_nologin.dart';
 import 'package:jeins_app/pages/more_profile.dart';
 
 import 'main_page.dart';
@@ -83,17 +85,29 @@ class _More_PageState extends State<More_Page> {
                             ),
                           ),
                           SizedBox(height:10),
-                          Container(
-                            width:80,
-                            height:30,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color:Color(0xFF3D626E),
-                            ),
-                            child: Center(
-                              child: Text('로그아웃',
-                                style:TextStyle(
-                                  color:Colors.white,
+                          GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                number2 = More_Nologin();
+                              });
+                              print('success');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => MainPage()),
+                              );
+                            },
+                            child: Container(
+                              width:80,
+                              height:30,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color:Color(0xFF3D626E),
+                              ),
+                              child: Center(
+                                child: Text('로그아웃',
+                                  style:TextStyle(
+                                    color:Colors.white,
+                                  ),
                                 ),
                               ),
                             ),
@@ -399,25 +413,37 @@ class _More_PageState extends State<More_Page> {
                         ),
                       ),
                       SizedBox(height:10),
-                      Container(
-                        padding: EdgeInsets.only(left:17.0),
-                        width: double.infinity,
-                        height:50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color:Colors.black.withOpacity(0.7),
-                        ),
-                        child: Row(
-                          children: [
-                            Image.asset("assets/icon-24-message.png"),
-                            SizedBox(width:10),
-                            Text('쪽지',
-                              style:TextStyle(
-                                color:Colors.white,
-                                fontSize:16,
+                      GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            number2 = More_Message();
+                          });
+                          print('success');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => MainPage()),
+                          );
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(left:17.0),
+                          width: double.infinity,
+                          height:50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color:Colors.black.withOpacity(0.7),
+                          ),
+                          child: Row(
+                            children: [
+                              Image.asset("assets/icon-24-message.png"),
+                              SizedBox(width:10),
+                              Text('쪽지',
+                                style:TextStyle(
+                                  color:Colors.white,
+                                  fontSize:16,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height:10),

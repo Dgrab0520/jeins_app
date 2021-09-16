@@ -1,22 +1,20 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jeins_app/pages/mission_before.dart';
 import 'package:jeins_app/pages/people_list.dart';
 import 'package:jeins_app/pages/people_list2.dart';
-import 'package:jeins_app/pages/sos_page.dart';
 
 import 'main_page.dart';
 import 'no1_befor.dart';
-import 'no1_list.dart';
-import 'no1_page.dart';
 
-class Circus_Page extends StatefulWidget {
+class Mission_Circus extends StatefulWidget {
+  const Mission_Circus({Key? key}) : super(key: key);
 
   @override
-  _Circus_PageState createState() => _Circus_PageState();
+  _Mission_CircusState createState() => _Mission_CircusState();
 }
 
-class _Circus_PageState extends State<Circus_Page> {
+class _Mission_CircusState extends State<Mission_Circus> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +22,7 @@ class _Circus_PageState extends State<Circus_Page> {
       decoration: BoxDecoration(
         color: Colors.black,
         image: DecorationImage(
-            image: AssetImage("assets/no1_bg.jpg"),
+            image: AssetImage("assets/m_bg.png"),
             fit: BoxFit.cover,
             colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.5),BlendMode.dstATop)
         ),
@@ -56,7 +54,7 @@ class _Circus_PageState extends State<Circus_Page> {
                       Expanded(
                         flex:8,
 
-                        child: Text('Another No.1',
+                        child: Text('미션',
                           style: TextStyle(
                             color:Colors.white,
                             fontSize:30,
@@ -162,7 +160,7 @@ class _Circus_PageState extends State<Circus_Page> {
                             height:40,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
-                              color:Color(0xFF7A6B92),
+                              color:Color(0xFF4177A6),
                             ),
                             child: GestureDetector(
                               onTap: (){
@@ -241,7 +239,7 @@ class _Circus_PageState extends State<Circus_Page> {
                                                       child: GestureDetector(
                                                         onTap: (){
                                                           setState(() {
-                                                            number1 = Circus_Page();
+                                                            number4 = Mission_Circus();
                                                           });
                                                           print('success');
                                                           Navigator.push(
@@ -278,7 +276,7 @@ class _Circus_PageState extends State<Circus_Page> {
                                                       child: GestureDetector(
                                                         onTap: (){
                                                           setState(() {
-                                                            number1 = Sos_Page();
+                                                            number4 = Mission_Circus();
                                                           });
                                                           print('success');
                                                           Navigator.push(
@@ -311,7 +309,7 @@ class _Circus_PageState extends State<Circus_Page> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text('SOS : 랜덤 친구들에게 좋아요, 싫어요 요청하기',
-                                  style: TextStyle(
+                                    style: TextStyle(
                                       color:Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 13,
@@ -329,27 +327,27 @@ class _Circus_PageState extends State<Circus_Page> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Image.asset("assets/no1-1img1-1.png"),
-                                    Image.asset("assets/no1-1img2.png"),
-                                    Image.asset("assets/no1-1img3.png"),
+                                    Image.asset("assets/m_save1.png"),
+                                    Image.asset("assets/m_save2.png"),
+                                    Image.asset("assets/m_save3.png"),
                                   ],
                                 ),
                                 SizedBox(height:10),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Image.asset("assets/no1-1img4.png"),
-                                    Image.asset("assets/no1-1img5.png"),
-                                    Image.asset("assets/no1-1img6.png"),
+                                    Image.asset("assets/m_save4.png"),
+                                    Image.asset("assets/m_save5.png"),
+                                    Image.asset("assets/m_save6.png"),
                                   ],
                                 ),
                                 SizedBox(height:10),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Image.asset("assets/no1-1img1-1.png"),
-                                    Image.asset("assets/no1-1img2.png"),
-                                    Image.asset("assets/no1-1img3.png"),
+                                    Image.asset("assets/m_save7.png"),
+                                    Image.asset("assets/m_save8.png"),
+                                    Image.asset("assets/m_save9.png"),
                                   ],
                                 ),
                               ],
@@ -366,7 +364,7 @@ class _Circus_PageState extends State<Circus_Page> {
                 GestureDetector(
                   onTap: (){
                     setState(() {
-                      number1 = No1_Before();
+                      number4 = Misson_Before();
                     });
                     print('success');
                     Navigator.push(

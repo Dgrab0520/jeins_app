@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:jeins_app/pages/mission_before.dart';
+import 'package:jeins_app/pages/mission_circus.dart';
 
 import 'circus_page.dart';
 import 'main_page.dart';
-import 'no1_list.dart';
-import 'no1_page.dart';
 
-class No1_Save extends StatefulWidget {
+class Mission_Save extends StatefulWidget {
+  const Mission_Save({Key? key}) : super(key: key);
 
   @override
-  _No1_SaveState createState() => _No1_SaveState();
+  _Mission_SaveState createState() => _Mission_SaveState();
 }
 
-class _No1_SaveState extends State<No1_Save> {
+class _Mission_SaveState extends State<Mission_Save> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +20,7 @@ class _No1_SaveState extends State<No1_Save> {
       decoration: BoxDecoration(
         color: Colors.black,
         image: DecorationImage(
-            image: AssetImage("assets/no1_bg.jpg"),
+            image: AssetImage("assets/m_bg.png"),
             fit: BoxFit.cover,
             colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.5),BlendMode.dstATop)
         ),
@@ -51,7 +52,7 @@ class _No1_SaveState extends State<No1_Save> {
                       Expanded(
                         flex:8,
 
-                        child: Text('Another No.1',
+                        child: Text('미션',
                           style: TextStyle(
                             color:Colors.white,
                             fontSize:30,
@@ -89,7 +90,7 @@ class _No1_SaveState extends State<No1_Save> {
                               children: [
                                 Image.asset("assets/blue.png", ),
                                 SizedBox(width:10),
-                                Text('시험점수 자랑',
+                                Text('저 뒤에있는 남자 찾고 있어',
                                   style: TextStyle(
                                     color:Colors.white,
                                     fontSize: 16,
@@ -108,7 +109,7 @@ class _No1_SaveState extends State<No1_Save> {
                                   children: [
                                     Image.asset("assets/purple.png", ),
                                     SizedBox(width:10),
-                                    Text('일반/비참함+답답함',
+                                    Text('[성인] 타인 공개 저격',
                                       style: TextStyle(
                                         color:Colors.white,
                                         fontSize: 14,
@@ -135,8 +136,34 @@ class _No1_SaveState extends State<No1_Save> {
                           ),
 
                           SizedBox(height:20),
-                          
-                          Image.asset("assets/no1-1img1.png"),
+
+                          Stack(
+                           children: [
+                             Positioned(child: Image.asset("assets/m_save0.png")),
+                             Positioned(
+                               top:70,
+                               left:200,
+                               child:
+                               Container(
+                                 width:100,
+                                 height:40,
+                                 decoration: BoxDecoration(
+                                 borderRadius: BorderRadius.circular(5),
+                                 color:Colors.black,
+                               ),
+                                 child: Center(
+                                   child: Text('자세히보기',
+                                    style:TextStyle(
+                                      color:Colors.white,
+                                      fontWeight:FontWeight.w500,
+                                      fontSize:16,
+                                    ),
+                                   ),
+                                 ),
+                              ),
+                             ),
+                           ], 
+                          ),
                         ],
                       ),
                     ),
@@ -153,7 +180,7 @@ class _No1_SaveState extends State<No1_Save> {
                         children: [
                           Image.asset("assets/blue.png", ),
                           SizedBox(width:10),
-                          Text('참가자들',
+                          Text('수행자들',
                             style: TextStyle(
                               color:Colors.white,
                               fontSize: 16,
@@ -186,32 +213,17 @@ class _No1_SaveState extends State<No1_Save> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Stack(
-                                children: [
-                                  Image.asset("assets/no1-1img1-1.png",
-                                      color: const Color.fromRGBO(255, 255, 255, 0.7),
-                                      colorBlendMode: BlendMode.modulate,),
-                                  Positioned(
-                                    top:40,left:30,
-                                      child: Text('창조자',
-                                      style: TextStyle(
-                                        color:Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Image.asset("assets/no1-1img2.png"),
-                              Image.asset("assets/no1-1img3.png"),
+                              Image.asset("assets/m_save1.png"),
+                              Image.asset("assets/m_save2.png"),
+                              Image.asset("assets/m_save3.png"),
                             ],
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Image.asset("assets/no1-1img4.png"),
-                              Image.asset("assets/no1-1img5.png"),
-                              Image.asset("assets/no1-1img6.png"),
+                              Image.asset("assets/m_save4.png"),
+                              Image.asset("assets/m_save5.png"),
+                              Image.asset("assets/m_save6.png"),
                             ],
                           ),
                         ],
@@ -219,47 +231,41 @@ class _No1_SaveState extends State<No1_Save> {
                     ),
                   ],
                 ),
-                SizedBox(height:20),
-                Padding(
-                  padding: EdgeInsets.only(left:17.0, right:17),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left:17.0,right:17,bottom:70,top:10),
+            width:double.infinity,
+            height:50,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              gradient: LinearGradient(
+                colors: <Color>[Color(0xFF41A5FC), Color(0xFFDB74FF)],
+              ),
+            ),
+            child: GestureDetector(
+              onTap: (){
+                setState(() {
+                  number4 = Mission_Circus();
+                });
+                print('success');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MainPage()),
+                );
+              },
 
-                  child: Container(
-                    width:170,
-                    height:50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      gradient: LinearGradient(
-                        colors: <Color>[Color(0xFF41A5FC), Color(0xFFDB74FF)],
-                      ),
-                    ),
-                    child: GestureDetector(
-                      onTap: (){
-                        setState(() {
-                          number1 = Circus_Page();
-                        });
-                        print('success');
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => MainPage()),
-
-                        );
-                      },
-
-                      child: Center(
-                        child: Text(
-                          '서커스 구경하기',
-                          style: TextStyle(
-                            color:Colors.white,
-                            fontWeight:FontWeight.w500,
-                            fontSize:15,
-                          ),
-                        ),
-                      ),
-                    ),
+              child: Center(
+                child: Text(
+                  '서커스 구경하기',
+                  style: TextStyle(
+                    color:Colors.white,
+                    fontWeight:FontWeight.w500,
+                    fontSize:15,
                   ),
                 ),
-                SizedBox(height:25),
-              ],
+              ),
             ),
           ),
         ],

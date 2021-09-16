@@ -64,7 +64,9 @@ class _Complete_TextState extends State<Complete_Text> {
               fontWeight: FontWeight.w400,
             ),
           ),
+
           SizedBox(height:15),
+
           Text('· 참가자들',
             style:TextStyle(
               color:Colors.white,
@@ -72,7 +74,9 @@ class _Complete_TextState extends State<Complete_Text> {
               fontWeight: FontWeight.w400,
             ),
           ),
+
           SizedBox(height:2),
+
           Container(
             padding: EdgeInsets.only(left:10.0,),
             child: Text('31,125 (50%) FMF 1,244명에게 배분 ',
@@ -83,7 +87,9 @@ class _Complete_TextState extends State<Complete_Text> {
               ),
             ),
           ),
+
           SizedBox(height:2),
+
           Container(
             padding: EdgeInsets.only(left:10.0,),
             child: Text('= 1인당 25.02코인 지급',

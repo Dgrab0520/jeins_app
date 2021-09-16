@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jeins_app/pages/complete_text.dart';
+import 'package:jeins_app/pages/mission_complete.dart';
+import 'package:jeins_app/pages/mission_history.dart';
 
 import 'before_sub.dart';
-import 'circus_page.dart';
 import 'main_page.dart';
-import 'no1_befor.dart';
-import 'no1_history.dart';
 
-class No1_Complete extends StatefulWidget {
-  const No1_Complete({Key? key}) : super(key: key);
+class Misson_Before extends StatefulWidget {
+  const Misson_Before({Key? key}) : super(key: key);
 
   @override
-  _No1_CompleteState createState() => _No1_CompleteState();
+  _Misson_BeforeState createState() => _Misson_BeforeState();
 }
 
-class _No1_CompleteState extends State<No1_Complete> {
+class _Misson_BeforeState extends State<Misson_Before> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +21,7 @@ class _No1_CompleteState extends State<No1_Complete> {
       decoration: BoxDecoration(
         color: Colors.black,
         image: DecorationImage(
-            image: AssetImage("assets/no1_bg.jpg"),
+            image: AssetImage("assets/m_bg.png"),
             fit: BoxFit.cover,
             colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.5),BlendMode.dstATop)
         ),
@@ -55,7 +53,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                       Expanded(
                         flex:8,
 
-                        child: Text('Another No.1',
+                        child: Text('미션',
                           style: TextStyle(
                             color:Colors.white,
                             fontSize:30,
@@ -80,7 +78,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                   children: [
                     Container(
                       width:360,
-                      height:510,
+                      height:380,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color:Colors.white.withOpacity(0.1),
@@ -93,7 +91,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                               children: [
                                 Image.asset("assets/blue.png", ),
                                 SizedBox(width:10),
-                                Text('시험점수 자랑',
+                                Text('저 뒤에 있는 남자 찾고 있어',
                                   style: TextStyle(
                                     color:Colors.white,
                                     fontSize: 16,
@@ -112,7 +110,21 @@ class _No1_CompleteState extends State<No1_Complete> {
                                   children: [
                                     Image.asset("assets/purple.png", ),
                                     SizedBox(width:10),
-                                    Text('일반/비참함+답답함',
+                                    Text('[성인] 타인 공개 저격',
+                                      style: TextStyle(
+                                        color:Colors.white,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                Row(
+                                  children: [
+                                    Image.asset("assets/map.png", ),
+                                    SizedBox(width:5),
+                                    Text('12km',
                                       style: TextStyle(
                                         color:Colors.white,
                                         fontSize: 14,
@@ -145,7 +157,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                                   children: [
                                     Image.asset("assets/b_player.png"),
                                     SizedBox(width:10),
-                                    Text('작성자 닉네임',
+                                    Text('호랑이',
                                       style: TextStyle(
                                         color:Colors.white.withOpacity(0.5),
                                         fontSize: 14,
@@ -155,7 +167,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                                     GestureDetector(
                                       onTap: (){
                                         setState(() {
-                                          number1 = History_Page();
+                                          number4 = Mission_History();
                                         });
                                         print('success');
                                         Navigator.push(
@@ -175,8 +187,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                                 ),
                                 Row(
                                   children: [
-                                    Image.asset("assets/gift.png"),
-                                    SizedBox(width:15),
+
                                     Image.asset("assets/overflow.png"),
                                   ],
                                 ),
@@ -199,43 +210,10 @@ class _No1_CompleteState extends State<No1_Complete> {
                                   ),
                                 ),
                                 SizedBox(height:10),
-                                Text('참가비 50C · 참가자 1,244P',
-                                  style:TextStyle(
-                                    color:Colors.white,
-                                    fontSize:14,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                                SizedBox(height:15),
+
                                 Row(
                                   children: [
-                                    Image.asset("assets/worst.png"),
-                                    SizedBox(width:5),
-                                    Text('124,841',
-                                      style:TextStyle(
-                                        color:Colors.white,
-                                        fontSize:14,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-
-                                    SizedBox(width:15),
-
-                                    Image.asset("assets/heart.png"),
-                                    SizedBox(width:5),
-                                    Text('545,841',
-                                      style:TextStyle(
-                                        color:Colors.white,
-                                        fontSize:14,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-
-                                    SizedBox(width:15),
-
-                                    Image.asset("assets/comment.png"),
-                                    SizedBox(width:5),
-                                    Text('155,841',
+                                    Text('상금 2,312C',
                                       style:TextStyle(
                                         color:Colors.white,
                                         fontSize:14,
@@ -252,22 +230,36 @@ class _No1_CompleteState extends State<No1_Complete> {
 
                           Container(
                             padding: EdgeInsets.only(left:17.0,right:17.0),
-                            child: Column(
+                            child: Row(
                               children: [
-                                Image.asset("assets/no1_b_img6.png"),
-                                SizedBox(height:10),
-                                Row(
+                                Image.asset("assets/m_before1.png"),
+                                SizedBox(width:10),
+                                Column(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Image.asset("assets/no1_b_img7.png"),
-                                    Column(
+                                    Image.asset("assets/m_before2.png"),
+                                    SizedBox(height:10),
+                                    Row(
                                       children: [
-                                        Image.asset("assets/no1_b_img4.png"),
-                                        SizedBox(height:10),
-                                        Image.asset("assets/no1_b_img5.png"),
+                                        Image.asset("assets/m_before3.png"),
+                                        SizedBox(width:10),
+                                        Image.asset("assets/m_before3.png"),
                                       ],
                                     )
                                   ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height:10),
+                          Container(
+                            padding: EdgeInsets.only(left:17.0,right:17.0),
+                            child: Row(
+                              children: [
+                                Text('텍스트',
+                                 style:TextStyle(
+                                   color:Colors.white,
+                                 ),
                                 ),
                               ],
                             ),
@@ -284,45 +276,25 @@ class _No1_CompleteState extends State<No1_Complete> {
                   children: [
 
                     Container(
-                      margin: EdgeInsets.only(left:17,right:17,),
                       padding: EdgeInsets.only(left:17,right:17,top:10,bottom:10),
-                      width:double.infinity,
-                      height:400,
+                      width:360,
+                      height:350,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color:Colors.white.withOpacity(0.1),
                       ),
 
-                      child: Complete_Text(),
-                    ),
-                  ],
-                ),
-
-                SizedBox(height:30),
-
-                Column(
-                  children: [
-                      Container(
-                        margin: EdgeInsets.only(left:17,right:17,),
-                        padding: EdgeInsets.only(left:17,right:17,top:10,bottom:10),
-                        width:double.infinity,
-                        height:350,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color:Colors.white.withOpacity(0.1),
-                        ),
-
-                        child: Column(
-                          children: [
-                            SizedBox(height:10),
-                            Before_Sub(),
-                            SizedBox(height:20),
-                            Before_Sub(),
-                            SizedBox(height:20),
-                            Before_Sub(),
-                          ],
-                        ),
+                      child: Column(
+                        children: [
+                          SizedBox(height:10),
+                          Before_Sub(),
+                          SizedBox(height:20),
+                          Before_Sub(),
+                          SizedBox(height:20),
+                          Before_Sub(),
+                        ],
                       ),
+                    ),
                   ],
                 ),
                 SizedBox(height:20),
@@ -515,7 +487,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                                                 child: GestureDetector(
                                                   onTap: (){
                                                     setState(() {
-                                                      number1 = No1_Before();
+                                                      number4 = Misson_Before();
                                                     });
                                                     print('success');
                                                     Navigator.push(
@@ -550,7 +522,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                                                 child: GestureDetector(
                                                   onTap: (){
                                                     setState(() {
-                                                      number1 = No1_Before();
+                                                      number4 = Misson_Before();
                                                     });
                                                     print('success');
                                                     Navigator.push(
@@ -604,7 +576,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                             child: GestureDetector(
                               onTap: (){
                                 setState(() {
-                                  number1 = No1_Complete();
+                                  number4 = Mission_Complete();
                                 });
                                 print('success');
                                 Navigator.push(
@@ -614,7 +586,7 @@ class _No1_CompleteState extends State<No1_Complete> {
                               },
                               child: Center(
                                 child: Text(
-                                  'Complete',
+                                  '참가하기',
                                   style: TextStyle(
                                     color:Colors.white,
                                     fontWeight:FontWeight.w500,

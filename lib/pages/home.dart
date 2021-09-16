@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jeins_app/pages/hone_worstbest.dart';
+
+import 'healing_page.dart';
+import 'main_page.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -38,20 +42,32 @@ class _HomeState extends State<Home> {
                 ),
                 SizedBox(height:150),
 
-                Container(
-                  padding: EdgeInsets.only(left:17.0,right:17),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Worst & Best',
-                        style: TextStyle(
-                          color:Colors.white,
-                          fontSize:16,
-                          fontWeight:FontWeight.w600,
+                GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      number3 = Home_Worstbest();
+                    });
+                    print('success');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MainPage()),
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.only(left:17.0,right:17),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Worst & Best',
+                          style: TextStyle(
+                            color:Colors.white,
+                            fontSize:16,
+                            fontWeight:FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      Icon(Icons.arrow_forward_ios,color:Colors.white,size: 16,),
-                    ],
+                        Icon(Icons.arrow_forward_ios,color:Colors.white,size: 16,),
+                      ],
+                    ),
                   ),
                 ),
 

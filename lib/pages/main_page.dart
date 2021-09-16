@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jeins_app/pages/mission_home.dart';
 import 'package:jeins_app/pages/more_page.dart';
 import 'package:jeins_app/pages/no1_save.dart';
 
@@ -7,6 +8,8 @@ import 'no1_list.dart';
 import 'no1_page.dart';
 Widget number1 = No1_Page();
 Widget number2 = More_Page();
+Widget number3 = Home();
+Widget number4 = Mission_Home();
 
 int _selectedIndex = 0;
 class  MainPage extends StatefulWidget {
@@ -18,8 +21,8 @@ class  MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
 
    List<Widget> _widgetOptions = <Widget>[
-    Home(),
-    No1_Save(),
+    number3,
+    number4,
     number1,
     No1_ListPage(),
      number2,

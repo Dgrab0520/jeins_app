@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:jeins_app/pages/more_message.dart';
+import 'package:get/get.dart';
+import 'package:jeins_app/pages/sos_page.dart';
 
-import 'healing_page.dart';
+import 'circus_page.dart';
 import 'main_page.dart';
+import 'more_message.dart';
 import 'more_music_play.dart';
-import 'more_music_text.dart';
 
-class More_Profile extends StatefulWidget {
-  const More_Profile({Key? key}) : super(key: key);
+class More_Otherprofile extends StatefulWidget {
+  const More_Otherprofile({Key? key}) : super(key: key);
 
   @override
-  _More_ProfileState createState() => _More_ProfileState();
+  _More_OtherprofileState createState() => _More_OtherprofileState();
 }
 
-class _More_ProfileState extends State<More_Profile> {
+class _More_OtherprofileState extends State<More_Otherprofile> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,8 +64,179 @@ class _More_ProfileState extends State<More_Profile> {
 
                       Expanded(
                         flex:1,
-                        child:
-                        Text(''),
+                        child:GestureDetector(
+                          onTap: (){
+                            Get.dialog(AlertDialog(
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(
+                                      color: Colors.white, width: 2),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(32.0),
+                                  ),
+                                ),
+                                backgroundColor: Color(0xFF423D3F).withOpacity(0.8),
+                                content: Container(
+
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+
+                                      Row(
+                                        children: [
+                                          SizedBox(width:95),
+                                          Text(
+                                            '로그인',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize:18,
+                                            ),
+                                          ),
+                                          SizedBox(height:10),
+                                          SizedBox(width:55),
+                                          TextButton(
+                                            style: TextButton.styleFrom(
+                                                primary: Colors.white),
+                                            child: Icon(Icons.close),
+                                            onPressed: () =>
+                                                Get.back(result: false),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height:10),
+                                      Column(
+                                        children: [
+                                          Container(
+                                            padding: EdgeInsets.only(left:17.0,right:17),
+                                            width: double.infinity,
+                                            height:60,
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(20),
+                                              color:Color(0xFF718487),
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Text('ID',
+                                                  style:TextStyle(
+                                                    color:Colors.white,
+                                                    fontSize:17,
+                                                  ),
+                                                ),
+                                                Image.asset("assets/icon-16-delete.png"),
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(height:10),
+                                          Container(
+                                            padding: EdgeInsets.only(left:17.0,right:17),
+                                            width: double.infinity,
+                                            height:60,
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(20),
+                                              color:Color(0xFF718487),
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Text('PW',
+                                                  style:TextStyle(
+                                                    color:Colors.white,
+                                                    fontSize:17,
+                                                  ),
+                                                ),
+                                                Image.asset("assets/icon-16-delete.png"),
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(height:20),
+                                          Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  width:30,
+                                                  height:50,
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(15),
+                                                    color:Color(0xFF615C61),
+                                                    border: Border.all(
+                                                      width: 1,
+                                                      color: Colors.white,
+                                                    ),
+                                                  ),
+                                                  child: GestureDetector(
+                                                    onTap: (){
+                                                      setState(() {
+                                                        number1 = More_Otherprofile();
+                                                      });
+                                                      print('success');
+                                                      Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(builder: (context) => MainPage()),
+                                                      );
+                                                    },
+                                                    child: Center(
+                                                      child: Text(
+                                                        '회원가입',
+                                                        style: TextStyle(
+                                                          color:Colors.white,
+                                                          fontWeight:FontWeight.w500,
+                                                          fontSize:15,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+
+                                              SizedBox(width:20),
+
+                                              Expanded(
+                                                child: Container(
+                                                  width:30,
+                                                  height:50,
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(15),
+                                                    gradient: LinearGradient(
+                                                      colors: <Color>[Color(0xFF41A5FC), Color(0xFFDB74FF)],
+                                                    ),
+                                                  ),
+                                                  child: GestureDetector(
+                                                    onTap: (){
+                                                      setState(() {
+                                                        number2 = More_Otherprofile();
+                                                      });
+                                                      print('success');
+                                                      Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(builder: (context) => MainPage()),
+                                                      );
+                                                    },
+                                                    child: Center(
+                                                      child: Text(
+                                                        '로그인',
+                                                        style: TextStyle(
+                                                          color:Colors.white,
+                                                          fontWeight:FontWeight.w500,
+                                                          fontSize:15,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                )));
+                          },
+                          child: Container(
+                              alignment: Alignment.centerRight,
+                              child: Image.asset("assets/overflow.png")),
+                        ),
                       ),
                     ],
                   ),
@@ -86,7 +258,7 @@ class _More_ProfileState extends State<More_Profile> {
                   child: Row(
 
                     children: [
-                      Image.asset("assets/profile.png"),
+                      Image.asset("assets/profile2.png"),
                       SizedBox(width:15),
                       Expanded(
                         child: Column(
@@ -96,7 +268,7 @@ class _More_ProfileState extends State<More_Profile> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  child: Text('Zico',
+                                  child: Text('동그라미',
                                     style:TextStyle(
                                       color:Colors.white,
                                       fontSize:18,
@@ -118,9 +290,9 @@ class _More_ProfileState extends State<More_Profile> {
                                         },
                                         child: Image.asset("assets/icon-16-message.png")),
                                     SizedBox(width:10),
-                                    Image.asset("assets/icon-16-my.png"),
+                                    Image.asset("assets/icon-16-mission.png"),
                                     SizedBox(width:10),
-                                    Image.asset("assets/icon-16-share.png"),
+                                    Image.asset("assets/icon-16-gift.png"),
                                   ],
                                 ),
                               ],
@@ -128,7 +300,7 @@ class _More_ProfileState extends State<More_Profile> {
                             SizedBox(height:5),
                             Row(
                               children: [
-                                Text('@dfd_23df4',
+                                Text('@dongri12',
                                   style:TextStyle(
                                     color:Color(0xFF41A5FC),
                                     fontSize:16,
